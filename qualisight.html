@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Alpine Core -->
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>simVietnam AI画像検査機</title>
+  <script>
+    function loadHTML(selector, file) {
+      const element = document.querySelector(selector);
+      if (element) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => (element.innerHTML = data))
+          .catch((error) => console.error("Error:", error));
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      loadHTML("header", "header.html");
+      loadHTML("footer", "footer.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="relative">
+    <header x-data="{ mobilenavOpen: false}"
+      class="lg:flex justify-between [&>*]:px-8 bg-white h-36 text-gray-700 sticky top-0 z-30 bg-cover bg-center"
+      style="background-image: url('./images/headerbg.png')"></header>
+    <div class="absolute left-24 bottom-6 z-50 text-2xl font-bold">
+      AI画像検査機販売
+    </div>
+  </div>
+  <section>
+    <div class="container mx-auto max-w-[1200px]">
+      <div class="w-full h-full py-8">
+        <img src="./images/qualisight/QUAlISIGHT_title.jpg" alt="">
+      </div>
+      <h2 class="text-2xl lg:text-3xl font-bold text-center my-10">汎用性の高い多彩な検査機能</h2>
+      <div class="w-full h-full p-8">
+        <img src="./images/qualisight/qualisight_main.jpg" alt="">
+      </div>
+      <h2 class="text-2xl lg:text-3xl font-bold text-center my-10">複数の検査内容を一括検査できます</h2>
+      <div class="m-auto w-full h-full max-w-5xl">
+        <p class="m-10 block">ひとつの検査設定には最大で999個の検査枠を設定できます。検査枠に対して個別に使用する機能を設定でき、複数の検査内容を一括で検査可能です（※同一の照明条件下に限ります）</p>
+        <img src="images/qualisight/image1.jpg" alt="" class="m-auto p-8">
+      </div>
+      <h2 class="text-2xl lg:text-3xl font-bold text-center my-10">直感的な簡単検査設定</h2>
+      <div class="m-auto w-full h-full max-w-5xl">
+        <p class="m-10 block">一般的なWindowsアプリを使う感覚で、ソフトのインストールや検査設定ができます。<br><br>
+
+          難しいプログラミングの知識は不要で、「厳しい」「甘い」など直感的に検査設定ができます。
+          寸法角度検査のエッジ（色や明るさの境目）検出も、視覚的に検出したいエッジが”どちら側にあるか”を選ぶだけ。</p>
+        <div class="flex flex-col sm:flex-row justify-center">
+          <div class="p-4 sm:p-8 w-full sm:w-auto">
+            <img src="images/qualisight/image 23.jpg" alt="" class="m-auto">
+          </div>
+          <div class="p-4 sm:p-8 w-full sm:w-auto">
+            <img src="images/qualisight/image 24.jpg" alt="" class="m-auto">
+          </div>
+        </div>
+      </div>
+      <div class="flex my-[5rem] mx-auto w-full max-w-5xl">
+        <div class="mx-auto flex flex-col sm:flex-row justify-center items-center lg:px-[20px]">
+          <div class="sm:w-1/2 m-10 flex flex-col order-2 sm:order-1">
+            <p class="m-10 text-2xl font-bold">
+              拡張性の高い外部制御機能
+            </p>
+            <p class="">
+              特別な知識が無くてもI/Oユニットを使用することでスイッチやパトライト、ブザーなどの機器と簡単に連携できます。ユニットとパソコンはUSBケーブルで接続し、入出力機器は線を繋ぐだけ（※機器の仕様は必ずご確認ください）。
+              外部アプリケーションとの通信や、PLCとの連携にも対応しております。
+              Socket通信コマンドやRS232C通信コマンドを利用して検査トリガーをかけたり設定を切り替えたりなど、EasyInspector2を自在に制御可能です。コマンドリストやサンプルプログラムはダウンロードページにございます。
+            </p>
+          </div>
+          <div class="sm:w-1/2 order-1 sm:order-2">
+            <img src="./images/qualisight/image 25.jpg" alt="" class="object-fill w-full">
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl lg:text-3xl font-bold text-center my-10">このような検査ができます</h2>
+      
+      <div id="image-container" class="m-auto w-full h-full max-w-5xl">
+
+        
+      </div>
+      <div class="m-auto w-full h-full max-w-5xl my-10">
+
+        <p>検査時間の目安※（10ヶ所の検査）</p>
+        <p>130万画素：0.5秒 300万画素：1秒 1000万画素：2秒 ※検査内容とPCの性能により異なります。</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  <footer></footer>
+  <script src="qualisight.js"></script>
+</body>
+
+</html>

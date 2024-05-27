@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Alpine Core -->
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>simVietnam　経営理念</title>
+  <script>
+    function loadHTML(selector, file) {
+      const element = document.querySelector(selector);
+      if (element) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => (element.innerHTML = data))
+          .catch((error) => console.error("Error:", error));
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      loadHTML("header", "header.html");
+      loadHTML("footer", "footer.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="relative">
+    <header x-data="{ mobilenavOpen: false}"
+      class="lg:flex justify-between [&>*]:px-8 bg-white h-36 text-gray-700 sticky top-0 z-30 bg-cover bg-center"
+      style="background-image: url('./images/headerbg.png')"></header>
+    <div class="absolute left-24 bottom-6 z-50 text-2xl font-bold">
+      経営理念
+    </div>
+  </div>
+  <section class="py-12 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-8">
+      <h1 class="text-2xl md:text-4xl font-bold text-white bg-[#293A6C] p-4">ＳＩＭベトナムの経営理念</h1>
+    </div>
+    <div class="bg-white shadow-lg p-6 rounded-lg text-center mb-8">
+      <p class="text-lg md:text-2xl font-bold">働くを通じて「人々の幸せ」と「世の中の発展」に貢献する</p>
+      <p class="text-md md:text-lg text-blue-700">Contributing to the happiness of people and the development of society through work</p>
+    </div>
+    <div class="text-center mb-8">
+      <h2 class="text-xl md:text-3xl font-bold">行動指針</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-[#293A6C] text-white p-6 rounded-lg text-center">
+        <div class="bg-white text-blue-700 rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4">
+          <span class="font-bold text-xl">1</span>
+        </div>
+        <h3 class="text-lg font-bold mb-2">お客様第一</h3>
+        <p class="text-sm">いかなる時もお客様を最優先に考え、常に誠実に行動します</p>
+      </div>
+      <div class="bg-[#293A6C] text-white p-6 rounded-lg text-center">
+        <div class="bg-white text-blue-700 rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4">
+          <span class="font-bold text-xl">2</span>
+        </div>
+        <h3 class="text-lg font-bold mb-2">従業員の幸せ</h3>
+        <p class="text-sm">お客様のお役に立ち必要とされることで、従業員の成長と幸せを実現します</p>
+      </div>
+      <div class="bg-[#293A6C] text-white p-6 rounded-lg text-center">
+        <div class="bg-white text-blue-700 rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4">
+          <span class="font-bold text-xl">3</span>
+        </div>
+        <h3 class="text-lg font-bold mb-2">イノベーション</h3>
+        <p class="text-sm">物事をより良くするために、常に新しい方法を追求します</p>
+      </div>
+      <div class="bg-[#293A6C] text-white p-6 rounded-lg text-center">
+        <div class="bg-white text-blue-700 rounded-full w-10 h-10 flex items-center justify-center mx-auto mb-4">
+          <span class="font-bold text-xl">4</span>
+        </div>
+        <h3 class="text-lg font-bold mb-2">高品質・良価格</h3>
+        <p class="text-sm">自動化設備を世の中に浸透させるため、徹底した合理化経営で、高品質・良価格を実現します</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer></footer>
+</body>
+
+
+</html>

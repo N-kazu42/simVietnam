@@ -1,0 +1,142 @@
+<div class="flex items-center justify-between h-20">
+  <logo>
+    <a class="flex-none text-xl font-semibold dark:text-white" href="#">
+      <img class="h-14" src="./images/2.png" alt="" />
+    </a>
+  </logo>
+  <mobileicon class="lg:hidden">
+    <a
+      @click="mobilenavOpen = !mobilenavOpen"
+      class="h-12 w-12 flex items-center justify-center cursor-pointer rounded-lg"
+    >
+      <img
+        x-show="!mobilenavOpen"
+        class="w-6 h-6"
+        src="https://img.icons8.com/small/64/151515/menu.png"
+        alt=""
+      />
+      <img
+        x-show="mobilenavOpen"
+        x-cloak
+        class="w-6 h-6"
+        src="https://img.icons8.com/small/64/151515/delete-sign.png"
+        alt=""
+      />
+    </a>
+  </mobileicon>
+</div>
+
+<nav
+  x-show="mobilenavOpen"
+  x-cloak
+  class="lg:!block bg-white lg:bg-transparent h-screen w-screen lg:h-auto lg:w-auto -mt-20 lg:mt-0 absolute lg:relative z-[-1]"
+  x-transition:enter="duration-700 ease-out"
+  x-transition:enter-start="opacity-0 -translate-y-96"
+  x-transition:enter-end="opacity-100 translate-y-0"
+>
+  <ul
+    class="flex items-center lg:h-20 navitems flex-col lg:flex-row gap-8 justify-center h-full -translate-y-10 lg:translate-y-0 gnavi"
+  >
+    <li class="menufont border-none">
+      <a href="index.html" @click="mobilenavOpen = false">ホーム</a>
+    </li>
+    <div class="relative" x-data="{ open: false }">
+      <button
+        @click="open = !open"
+        class="flex flex-row items-center w-full mt-2 hover:text-black focus:outline-none focus:text-gray-500 md:w-auto md:inline md:mt-0 focus:shadow-outline"
+      >
+        <span> 会社案内 </span>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          :class="{'rotate-180': open, 'rotate-0': !open}"
+          class="inline size-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 rotate-0"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="absolute z-10 w-screen max-w-xs px-2 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0"
+        style="display: none"
+      >
+        <div
+          class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+        >
+          <div class="relative grid gap-6 px-5 py-6 bg-white sm:gap-8 sm:p-8">
+            <a
+              href="greeting.html"
+              class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50"
+            >
+              <div class="">
+                <ion-icon
+                  class="text-black size-6 md hydrated"
+                  name="search-outline"
+                  role="img"
+                  aria-label="search outline"
+                ></ion-icon>
+              </div>
+              <div class="ml-4">
+                <p class="text-base font-medium text-black">代表メッセージ</p>
+              </div>
+            </a>
+            <a
+              href="overview.html"
+              class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50"
+            >
+              <div class="">
+                <ion-icon
+                  class="text-black size-6 md hydrated"
+                  name="book-outline"
+                  role="img"
+                  aria-label="book outline"
+                ></ion-icon>
+              </div>
+              <div class="ml-4">
+                <p class="text-base font-medium text-black">会社概要</p>
+              </div>
+            </a>
+            <a
+              href="access.html"
+              class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50"
+            >
+              <div class="">
+                <ion-icon
+                  class="text-black size-6 md hydrated"
+                  name="lock-closed-outline"
+                  role="img"
+                  aria-label="lock closed outline"
+                ></ion-icon>
+              </div>
+              <div class="ml-4">
+                <p class="text-base font-medium text-black">アクセスマップ</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <li class="menufont border-none">
+      <a href="information.html" @click="mobilenavOpen = false">事業案内</a>
+    </li>
+    <li class="menufont border-none">
+      <a href="philosophy.html" @click="mobilenavOpen = false">経営理念</a>
+    </li>
+    <li class="menufont border-none">
+      <a href="recruit.html" @click="mobilenavOpen = false">採用情報</a>
+    </li>
+    <li class="menufont border-none">
+      <a href="https://forms.gle/t5WKSnynVp63Jkos5" @click="mobilenavOpen = false">お問い合わせ</a>
+    </li>
+  </ul>
+</nav>

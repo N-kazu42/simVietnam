@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Alpine Plugins -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Alpine Core -->
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>simVietnam 事業案内</title>
+  <script>
+    function loadHTML(selector, file) {
+      const element = document.querySelector(selector);
+      if (element) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => (element.innerHTML = data))
+          .catch((error) => console.error("Error:", error));
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      loadHTML("header", "header.html");
+      loadHTML("footer", "footer.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="relative">
+    <header x-data="{ mobilenavOpen: false}"
+      class="lg:flex justify-between [&>*]:px-8 bg-white h-36 text-gray-700 sticky top-0 z-30 bg-cover bg-center"
+      style="background-image: url('./images/headerbg.png')"></header>
+    <div class="absolute left-24 bottom-6 z-50 text-2xl font-bold">
+      事業案内
+    </div>
+  </div>
+  <section>
+    <div class="container mx-auto max-w-[1200px]">
+      <!-- Container Start -->
+      <div class="flex flex-col md:flex-row h-full p-8">
+        <div class="w-[80%] md:w-1/2 h-[70vh] lg:h-[60vh] drop-shadow-md bg-white m-10">
+          <img src="./images/main_machine.jpg" alt="" class="h-[40%]">
+          <div class="p-5">
+            <div class="text-center">
+              <h2 class="inline-block py-2 text-2xl font-bold">省力化自動機設計</h2>
+            </div>
+            <p class="lg:px-8 py-4 border-b-2">組立、搬送、検査、梱包など、あらゆる作業工程の効率化と自動化をご提案いたします。直感的に理解できるアニメーション対応も可能で、複雑なプロセスを分かりやすくご説明します。効率向上とコスト削減を実現し、生産性を最大化します。</p>
+            <div class="text-right pt-8">
+              <a href="automatic-machine.html" class="inline-block">
+                <div class="flex flex-row items-center">
+                  <img src="./images/arrow.png" alt="" class="h-10">
+                  <p>詳しく見る</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-[80%] md:w-1/2 h-[70vh] lg:h-[60vh] drop-shadow-md bg-white m-10">
+          <img src="./images/qualisight_2.jpg" alt="" class="w-full h-[40%] object-top object-cover">
+          <div class="p-5">
+            <div class="text-center">
+              <h2 class="inline-block py-2 text-2xl font-bold">Ai画像検査機販売</h2>
+            </div>
+            <p class="lg:px-8 py-4 border-b-2">汎用性の高い多彩な検査機能を備え、複数の検査内容を一括で効率的に処理します。直感的な簡単検査設定により、迅速な導入が可能であり、拡張性の高い外部制御機能により、柔軟にシステムとの連携ができます。</p>
+            <div class="text-right pt-8">
+              <a href="qualisight.html" class="inline-block">
+                <div class="flex flex-row items-center">
+                  <img src="./images/arrow.png" alt="" class="h-10">
+                  <p>詳しく見る</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Container end -->
+
+      
+    </div>
+  </section>
+  
+  <footer></footer>
+</body>
+
+</html>
