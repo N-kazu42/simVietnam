@@ -16,6 +16,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="main.js"></script> <!-- main.jsを読み込む -->
   <title>simVietnam</title>
+  <style>
+    @keyframes zoomIn {
+      from {
+        background-size: 110%;
+      }
+      to {
+        background-size: 120%;
+      }
+    }
+    
+    .slide {
+      background-size: 110%;
+      background-position: center;
+      transition: background-size 3s ease-in-out;
+    }
+    
+    .slide.active {
+      animation: zoomIn 3s ease-in-out forwards;
+    }
+    </style>
+    
+    
   <script>
     function loadHTML(selector, file) {
       const element = document.querySelector(selector);
@@ -36,27 +58,79 @@
 <body>
   <header x-data="{ mobilenavOpen: false}"
     class="lg:flex justify-between [&>*]:px-8 bg-white h-20 text-gray-700 sticky top-0 z-50"></header>
-  <section
-    class="max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
-    style="background-image: url('./images/Slider1.png')">
-    <!-- Text - Start -->
-    <div class="relative z-10 flex flex-col items-start left-20">
-      <!-- Company Catchphrase - Start -->
-      <p
-        class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
-        SYSTEM <br />
-        INTEGRATION <br />
-        MANAGEMENT <br />
-        VIETNAM CO., LTD
-      </p>
-      <p
-        class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
-        SIMベトナムは、2024年5月31日に <br />
-        ハノイで創業いたしました。
-      </p>
-      <!-- Company Catchphrase - End -->
+  <section>
+    <!-- 1枚目 -->
+    <div
+      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
+      style="background-image: url('./images/Slider1.png')">
+
+      <!-- Text - Start -->
+      <div class="relative z-10 flex flex-col items-start left-20">
+        <!-- Company Catchphrase - Start -->
+        <p
+          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
+          SYSTEM <br />
+          INTEGRATION <br />
+          MANAGEMENT <br />
+          VIETNAM CO., LTD
+        </p>
+        <p
+          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
+          SIMベトナムは、2024年5月31日に <br />
+          ハノイで創業いたしました。
+        </p>
+        <!-- Company Catchphrase - End -->
+      </div>
+      <!-- Text - End -->
     </div>
-    <!-- Text - End -->
+    <!-- 2枚目 -->
+    <div
+      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950 py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-center"
+      style="background-image: url('./images/Slider3.jpg')">
+
+      <!-- Text - Start -->
+      <div class="relative z-10 flex flex-col items-start left-20">
+        <!-- Company Catchphrase - Start -->
+        <p
+          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
+          2枚目 <br />
+          INTEGRATION <br />
+          MANAGEMENT <br />
+          VIETNAM CO., LTD
+        </p>
+        <p
+          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
+          SIMベトナムは、2024年5月31日に <br />
+          ハノイで創業いたしました。
+        </p>
+        <!-- Company Catchphrase - End -->
+      </div>
+      <!-- Text - End -->
+    </div>
+<!-- 3枚目 -->
+    <div
+      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
+      style="background-image: url('./images/Slider2.jpg')">
+
+      <!-- Text - Start -->
+      <div class="relative z-10 flex flex-col items-start left-20">
+        <!-- Company Catchphrase - Start -->
+        <p
+          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
+          3枚目 <br />
+          INTEGRATION <br />
+          MANAGEMENT <br />
+          VIETNAM CO., LTD
+        </p>
+        <p
+          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
+          SIMベトナムは、2024年5月31日に <br />
+          ハノイで創業いたしました。
+        </p>
+        <!-- Company Catchphrase - End -->
+      </div>
+      <!-- Text - End -->
+    </div>
   </section>
   <section>
     <div
@@ -87,7 +161,8 @@
     <h1 class="text-center text-4xl md:text-5xl uppercase">information</h1>
     <h3 class="text-center text-lg md:text-xl">事業案内</h3>
     <div class="max-w-[1300px] h-auto md:h-[500px] flex flex-col md:flex-row my-20 ">
-      <div class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
+      <div
+        class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
         style="background-image: url('./images/machine.png')">
         <p class="text-center font-bold">
           省力化 <br />
@@ -98,7 +173,8 @@
           詳しく見る
         </button>
       </div>
-      <div class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
+      <div
+        class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
         style="background-image: url('./images/qualisight.png')">
         <p class="text-center font-bold">
           AI画像検査機 <br />
@@ -111,13 +187,15 @@
       </div>
     </div>
   </section>
-  
+
   <section>
     <h1 class="text-center text-4xl md:text-5xl uppercase pt-10">RECRUIT</h1>
     <div class="flex justify-end my-20 w-full">
-      <div class="relative w-full max-w-[1100px] h-[500px] bg-center bg-cover flex flex-col justify-center items-center text-2xl"
+      <div
+        class="relative w-full max-w-[1100px] h-[500px] bg-center bg-cover flex flex-col justify-center items-center text-2xl"
         style="background-image: url('./images/recruit.png')">
-        <div class="absolute w-11/12 md:w-[80%] bg-white h-auto md:h-[300px] bottom-[-10%] md:bottom-[-5%] left-[2%] drop-shadow-xl">
+        <div
+          class="absolute w-11/12 md:w-[80%] bg-white h-auto md:h-[300px] bottom-[-10%] md:bottom-[-5%] left-[2%] drop-shadow-xl">
           <div class="flex flex-col p-6 md:p-10 relative h-full">
             <h3 class="text-center text-lg md:text-xl">採用情報</h3>
             <p class="text-base md:text-xl p-6 md:p-10">
@@ -135,8 +213,8 @@
       </div>
     </div>
   </section>
-  
-  
+
+
   <section>
     <h1 class="text-center text-[2.5rem] uppercase pt-10">contact</h1>
     <div class="flex my-[5rem] justify-end mx-auto w-full">
@@ -150,6 +228,35 @@
   </section>
 
   <footer></footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+    
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.remove("hidden");
+            slide.classList.add("active");
+          } else {
+            slide.classList.add("hidden");
+            slide.classList.remove("active");
+          }
+        });
+      }
+    
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+    
+      showSlide(currentSlide);
+      setInterval(nextSlide, 3000); // 3秒ごとにスライドを切り替える
+    });
+    </script>
+    
+    
+    
 </body>
 
 </html>
