@@ -19,23 +19,24 @@
   <style>
     @keyframes zoomIn {
       from {
-        background-size: 110%;
+        background-size: 100%;
       }
       to {
-        background-size: 120%;
+        background-size: 110%;
       }
     }
     
     .slide {
-      background-size: 110%;
+      background-size: 100%;
       background-position: center;
-      transition: background-size 3s ease-in-out;
+      min-width: 100%; /* コンテナの高さを100%に設定 */
     }
     
     .slide.active {
       animation: zoomIn 3s ease-in-out forwards;
     }
     </style>
+    
     
     
   <script>
@@ -62,7 +63,8 @@
     <!-- 1枚目 -->
     <div
       class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
-      style="background-image: url('./images/Slider1.png')">
+      style="background-image: url('./images/Slider1.png');" 
+       data-bg-sm="url('./images/Slider1_sm.jpg')" data-bg-md="url('./images/Slider1_md.jpg')" data-bg-lg="url('./images/Slider1.png')">
 
       <!-- Text - Start -->
       <div class="relative z-10 flex flex-col items-start left-20">
@@ -86,8 +88,8 @@
     <!-- 2枚目 -->
     <div
       class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950 py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-center"
-      style="background-image: url('./images/Slider3.jpg')">
-
+      style="background-image: url('./images/Slider3.jpg');" 
+       data-bg-sm="url('./images/Slider3_sm.jpg')" data-bg-md="url('./images/Slider3_md.jpg')" data-bg-lg="url('./images/Slider3.jpg')">
       <!-- Text - Start -->
       <div class="relative z-10 flex flex-col items-start left-20">
         <!-- Company Catchphrase - Start -->
@@ -110,7 +112,8 @@
 <!-- 3枚目 -->
     <div
       class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
-      style="background-image: url('./images/Slider2.jpg')">
+      style="background-image: url('./images/Slider2.jpg');" 
+       data-bg-sm="url('./images/Slider2_sm.jpg')" data-bg-md="url('./images/Slider2_md.jpg')" data-bg-lg="url('./images/Slider2.jpg')">
 
       <!-- Text - Start -->
       <div class="relative z-10 flex flex-col items-start left-20">
@@ -233,11 +236,23 @@
       const slides = document.querySelectorAll(".slide");
       let currentSlide = 0;
     
+      function setResponsiveBackground(slide) {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 768) {
+          slide.style.backgroundImage = slide.getAttribute('data-bg-sm');
+        } else if (screenWidth < 1024) {
+          slide.style.backgroundImage = slide.getAttribute('data-bg-md');
+        } else {
+          slide.style.backgroundImage = slide.getAttribute('data-bg-lg');
+        }
+      }
+    
       function showSlide(index) {
         slides.forEach((slide, i) => {
           if (i === index) {
             slide.classList.remove("hidden");
             slide.classList.add("active");
+            setResponsiveBackground(slide);
           } else {
             slide.classList.add("hidden");
             slide.classList.remove("active");
@@ -254,6 +269,7 @@
       setInterval(nextSlide, 3000); // 3秒ごとにスライドを切り替える
     });
     </script>
+    
     
     
     
