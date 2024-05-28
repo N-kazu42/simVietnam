@@ -1,278 +1,275 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Alpine Plugins -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+    ></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex">
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <!-- Alpine Plugins -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
 
-  <!-- Alpine Core -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js"></script>
+    <!-- main.jsを読み込む -->
+    <title>simVietnam</title>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="main.js"></script> <!-- main.jsを読み込む -->
-  <title>simVietnam</title>
-  <style>
-    @keyframes zoomIn {
-      from {
-        background-size: 100%;
+    <script>
+      function loadHTML(selector, file) {
+        const element = document.querySelector(selector);
+        if (element) {
+          fetch(file)
+            .then((response) => response.text())
+            .then((data) => (element.innerHTML = data))
+            .catch((error) => console.error("Error:", error));
+        }
       }
-      to {
-        background-size: 110%;
-      }
-    }
-    
-    .slide {
-      background-size: 100%;
-      background-position: center;
-      min-width: 100%; /* コンテナの高さを100%に設定 */
-    }
-    
-    .slide.active {
-      animation: zoomIn 3s ease-in-out forwards;
-    }
-    </style>
-    
-    
-    
-  <script>
-    function loadHTML(selector, file) {
-      const element = document.querySelector(selector);
-      if (element) {
-        fetch(file)
-          .then((response) => response.text())
-          .then((data) => (element.innerHTML = data))
-          .catch((error) => console.error("Error:", error));
-      }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-      loadHTML("header", "header.html");
-      loadHTML("footer", "footer.html");
-    });
-  </script>
-</head>
+      document.addEventListener("DOMContentLoaded", function () {
+        loadHTML("header", "header.html");
+        loadHTML("footer", "footer.html");
+      });
+    </script>
+  </head>
 
-<body>
-  <header x-data="{ mobilenavOpen: false}"
-    class="lg:flex justify-between [&>*]:px-8 bg-white h-20 text-gray-700 sticky top-0 z-50"></header>
-  <section>
-    <!-- 1枚目 -->
-    <div
-      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
-      style="background-image: url('./images/Slider1.png');" 
-       data-bg-sm="url('./images/Slider1_sm.jpg')" data-bg-md="url('./images/Slider1_md.jpg')" data-bg-lg="url('./images/Slider1.png')">
-
-      <!-- Text - Start -->
-      <div class="relative z-10 flex flex-col items-start left-20">
-        <!-- Company Catchphrase - Start -->
-        <p
-          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
-          SYSTEM <br />
-          INTEGRATION <br />
-          MANAGEMENT <br />
-          VIETNAM CO., LTD
-        </p>
-        <p
-          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
-          SIMベトナムは、2024年5月31日に <br />
-          ハノイで創業いたしました。
-        </p>
-        <!-- Company Catchphrase - End -->
-      </div>
-      <!-- Text - End -->
-    </div>
-    <!-- 2枚目 -->
-    <div
-      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950 py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-center"
-      style="background-image: url('./images/Slider3.jpg');" 
-       data-bg-sm="url('./images/Slider3_sm.jpg')" data-bg-md="url('./images/Slider3_md.jpg')" data-bg-lg="url('./images/Slider3.jpg')">
-      <!-- Text - Start -->
-      <div class="relative z-10 flex flex-col items-start left-20">
-        <!-- Company Catchphrase - Start -->
-        <p
-          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
-          2枚目 <br />
-          INTEGRATION <br />
-          MANAGEMENT <br />
-          VIETNAM CO., LTD
-        </p>
-        <p
-          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
-          SIMベトナムは、2024年5月31日に <br />
-          ハノイで創業いたしました。
-        </p>
-        <!-- Company Catchphrase - End -->
-      </div>
-      <!-- Text - End -->
-    </div>
-<!-- 3枚目 -->
-    <div
-      class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
-      style="background-image: url('./images/Slider2.jpg');" 
-       data-bg-sm="url('./images/Slider2_sm.jpg')" data-bg-md="url('./images/Slider2_md.jpg')" data-bg-lg="url('./images/Slider2.jpg')">
-
-      <!-- Text - Start -->
-      <div class="relative z-10 flex flex-col items-start left-20">
-        <!-- Company Catchphrase - Start -->
-        <p
-          class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl">
-          3枚目 <br />
-          INTEGRATION <br />
-          MANAGEMENT <br />
-          VIETNAM CO., LTD
-        </p>
-        <p
-          class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md">
-          SIMベトナムは、2024年5月31日に <br />
-          ハノイで創業いたしました。
-        </p>
-        <!-- Company Catchphrase - End -->
-      </div>
-      <!-- Text - End -->
-    </div>
-  </section>
-  <section>
-    <div
-      class="flex flex-col md:flex-row justify-around items-center my-4 py-10 md:py-40 space-y-4 md:space-y-0 md:space-x-4">
-      <a href="greeting.html" class="w-full md:w-auto">
-        <div class="relative flex items-center justify-center md:justify-start">
-          <img src="./images/arrow.png" alt="" class="w-12  md:w-auto md:h-auto" />
-          <span class="ml-4 text-lg text-black">代表メッセージ</span>
-        </div>
-      </a>
-      <a href="overview.html" class="w-full md:w-auto">
-        <div class="relative flex items-center justify-center md:justify-start w-full md:w-auto">
-          <img src="./images/arrow.png" alt="" class="w-12  md:w-auto md:h-auto" />
-          <span class="ml-4 text-lg text-black">会社概要</span>
-        </div>
-      </a>
-      <a href="access.html" class="w-full md:w-auto">
-        <div class="relative flex items-center justify-center md:justify-start w-full md:w-auto">
-          <img src="./images/arrow.png" alt="" class="w-12  md:w-auto md:h-auto" />
-          <span class="ml-4 text-lg text-black">アクセスマップ</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-
-  <section>
-    <h1 class="text-center text-4xl md:text-5xl uppercase">information</h1>
-    <h3 class="text-center text-lg md:text-xl">事業案内</h3>
-    <div class="max-w-[1300px] h-auto md:h-[500px] flex flex-col md:flex-row my-20 ">
+  <body>
+    <header
+      x-data="{ mobilenavOpen: false}"
+      class="lg:flex justify-between [&>*]:px-8 bg-white h-20 text-gray-700 sticky top-0 z-50"
+    ></header>
+    <section>
+      <!-- 1枚目 -->
       <div
-        class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
-        style="background-image: url('./images/machine.png')">
-        <p class="text-center font-bold">
-          省力化 <br />
-          自動機設計
-        </p>
-        <button class="btn mt-4 md:absolute md:bottom-10 rounded-full px-8 base-100 text-lg"
-          onclick="location.href='automatic-machine.html'">
-          詳しく見る
-        </button>
+        class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
+        style="background-image: url('./images/Slider1.png')"
+        data-bg-sm="url('./images/Slider1_sm.jpg')"
+        data-bg-md="url('./images/Slider1_md.jpg')"
+        data-bg-lg="url('./images/Slider1.png')"
+      >
+        <!-- Text - Start -->
+        <div class="relative z-10 flex flex-col items-start left-20">
+          <!-- Company Catchphrase - Start -->
+          <p
+            class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl"
+          >
+            SYSTEM <br />
+            INTEGRATION <br />
+            MANAGEMENT <br />
+            VIETNAM CO., LTD
+          </p>
+          <p
+            class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md"
+          >
+            SIMベトナムは、2024年5月31日に <br />
+            ハノイで創業いたしました。
+          </p>
+          <!-- Company Catchphrase - End -->
+        </div>
+        <!-- Text - End -->
       </div>
+      <!-- 2枚目 -->
       <div
-        class="relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
-        style="background-image: url('./images/qualisight.png')">
-        <p class="text-center font-bold">
-          AI画像検査機 <br />
-          販売
-        </p>
-        <button class="btn mt-4 md:absolute md:bottom-10 rounded-full px-8 base-100 text-lg"
-          onclick="location.href='qualisight.html'">
-          詳しく見る
-        </button>
+        class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950 py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-center"
+        style="background-image: url('./images/Slider3.jpg')"
+        data-bg-sm="url('./images/Slider3_sm.jpg')"
+        data-bg-md="url('./images/Slider3_md.jpg')"
+        data-bg-lg="url('./images/Slider3.jpg')"
+      >
+        <!-- Text - Start -->
+        <div class="relative z-10 flex flex-col items-start left-20">
+          <!-- Company Catchphrase - Start -->
+          <p
+            class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl"
+          >
+            2枚目 <br />
+            INTEGRATION <br />
+            MANAGEMENT <br />
+            VIETNAM CO., LTD
+          </p>
+          <p
+            class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md"
+          >
+            SIMベトナムは、2024年5月31日に <br />
+            ハノイで創業いたしました。
+          </p>
+          <!-- Company Catchphrase - End -->
+        </div>
+        <!-- Text - End -->
       </div>
-    </div>
-  </section>
+      <!-- 3枚目 -->
+      <div
+        class="slide hidden max-h-full relative flex flex-1 shrink-0 items-center rounded-lg bg-stone-950/[0.15] py-16 shadow-lg md:py-20 xl:py-48 bg-cover bg-bottom"
+        style="background-image: url('./images/Slider2.jpg')"
+        data-bg-sm="url('./images/Slider2_sm.jpg')"
+        data-bg-md="url('./images/Slider2_md.jpg')"
+        data-bg-lg="url('./images/Slider2.jpg')"
+      >
+        <!-- Text - Start -->
+        <div class="relative z-10 flex flex-col items-start left-20">
+          <!-- Company Catchphrase - Start -->
+          <p
+            class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold text-white f-Zen drop-shadow-xl"
+          >
+            3枚目 <br />
+            INTEGRATION <br />
+            MANAGEMENT <br />
+            VIETNAM CO., LTD
+          </p>
+          <p
+            class="text-[0.75rem] md:text-[1rem] lg:text-[1.25rem] xl:text-[1.5rem] 2xl:text-[1.75rem] font-semibold text-white f-Zen pt-10 drop-shadow-md"
+          >
+            SIMベトナムは、2024年5月31日に <br />
+            ハノイで創業いたしました。
+          </p>
+          <!-- Company Catchphrase - End -->
+        </div>
+        <!-- Text - End -->
+      </div>
+    </section>
+    <section>
+      <div
+        class="flex flex-col md:flex-row justify-around items-center my-4 py-10 md:py-40 space-y-4 md:space-y-0 md:space-x-4"
+      >
+        <a href="greeting.html" class="w-full md:w-auto">
+          <div
+            class="relative flex items-center justify-center md:justify-start"
+          >
+            <img
+              src="./images/arrow.png"
+              alt=""
+              class="w-12 md:w-auto md:h-auto"
+            />
+            <span class="ml-4 text-lg text-black">代表メッセージ</span>
+          </div>
+        </a>
+        <a href="overview.html" class="w-full md:w-auto">
+          <div
+            class="relative flex items-center justify-center md:justify-start w-full md:w-auto"
+          >
+            <img
+              src="./images/arrow.png"
+              alt=""
+              class="w-12 md:w-auto md:h-auto"
+            />
+            <span class="ml-4 text-lg text-black">会社概要</span>
+          </div>
+        </a>
+        <a href="access.html" class="w-full md:w-auto">
+          <div
+            class="relative flex items-center justify-center md:justify-start w-full md:w-auto"
+          >
+            <img
+              src="./images/arrow.png"
+              alt=""
+              class="w-12 md:w-auto md:h-auto"
+            />
+            <span class="ml-4 text-lg text-black">アクセスマップ</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
-  <section>
-    <h1 class="text-center text-4xl md:text-5xl uppercase pt-10">RECRUIT</h1>
-    <div class="flex justify-end my-20 w-full">
+    <section>
+      <h1 class="text-center text-4xl md:text-5xl uppercase">information</h1>
+      <h3 class="text-center text-lg md:text-xl">事業案内</h3>
       <div
-        class="relative w-full max-w-[1100px] h-[500px] bg-center bg-cover flex flex-col justify-center items-center text-2xl"
-        style="background-image: url('./images/recruit.png')">
+        class="max-w-[1300px] h-auto md:h-[500px] flex flex-col md:flex-row my-20"
+      >
         <div
-          class="absolute w-11/12 md:w-[80%] bg-white h-auto md:h-[300px] bottom-[-10%] md:bottom-[-5%] left-[2%] drop-shadow-xl">
-          <div class="flex flex-col p-6 md:p-10 relative h-full">
-            <h3 class="text-center text-lg md:text-xl">採用情報</h3>
-            <p class="text-base md:text-xl p-6 md:p-10">
-              私たちのチームに参加して、革新的な省力化自動機とAI画像検査機の未来を共に創りましょう。情熱を持ち、挑戦を楽しむ方をお待ちしています。あなたの技術とアイデアを、私たちと一緒に実現しませんか？
-            </p>
-            <a href="recruit.html">
-              <div class="absolute bottom-3 right-3 flex items-center">
-                <img src="./images/arrow.png" alt="" class="h-10 md:w-auto md:h-auto" />
-                <span class="ml-4 md:ml-8 text-base md:text-lg text-black">詳しく見る</span>
-              </div>
+          class="fade-up relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
+          style="background-image: url('./images/machine.png')"
+        >
+          <p class="text-center font-bold">
+            省力化 <br />
+            自動機設計
+          </p>
+          <button
+            class="btn mt-4 md:absolute md:bottom-10 rounded-full px-8 base-100 text-lg"
+            onclick="location.href='automatic-machine.html'"
+          >
+            詳しく見る
+          </button>
+        </div>
+        <div
+          class="fade-up relative w-full h-[300px] md:h-[380px] md:w-1/2 bg-center bg-cover flex flex-col justify-center items-center text-2xl py-10 md:py-0"
+          style="background-image: url('./images/qualisight.png')"
+        >
+          <p class="text-center font-bold">
+            AI画像検査機 <br />
+            販売
+          </p>
+          <button
+            class="btn mt-4 md:absolute md:bottom-10 rounded-full px-8 base-100 text-lg"
+            onclick="location.href='qualisight.html'"
+          >
+            詳しく見る
+          </button>
+        </div>
+      </div>
+    </section>
 
-            </a>
+    <section class="fade-up">
+      <h1 class="text-center text-4xl md:text-5xl uppercase pt-10">RECRUIT</h1>
+      <div class="flex justify-end my-20 w-full">
+        <div
+          class="relative w-full max-w-[1100px] h-[500px] bg-center bg-cover flex flex-col justify-center items-center text-2xl"
+          style="background-image: url('./images/recruit.png')"
+        >
+          <div
+            class="absolute w-11/12 md:w-[80%] bg-white h-auto md:h-[300px] bottom-[-10%] md:bottom-[-5%] left-[2%] drop-shadow-xl"
+          >
+            <div class="flex flex-col p-6 md:p-10 relative h-full">
+              <h3 class="text-center text-lg md:text-xl">採用情報</h3>
+              <p class="text-base md:text-xl p-6 md:p-10">
+                私たちのチームに参加して、革新的な省力化自動機とAI画像検査機の未来を共に創りましょう。情熱を持ち、挑戦を楽しむ方をお待ちしています。あなたの技術とアイデアを、私たちと一緒に実現しませんか？
+              </p>
+              <a href="recruit.html">
+                <div class="absolute bottom-3 right-3 flex items-center">
+                  <img
+                    src="./images/arrow.png"
+                    alt=""
+                    class="h-10 md:w-auto md:h-auto"
+                  />
+                  <span class="ml-4 md:ml-8 text-base md:text-lg text-black"
+                    >詳しく見る</span
+                  >
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-
-  <section>
-    <h1 class="text-center text-[2.5rem] uppercase pt-10">contact</h1>
-    <div class="flex my-[5rem] justify-end mx-auto w-full">
-      <div class="relative w-full h-[400px] bg-center bg-cover flex flex-col justify-center items-center"
-        style="background-image: url('./images/contact.png')">
-        <a href="https://forms.gle/t5WKSnynVp63Jkos5" class="btn btn-outline mt-4 px-8 base-100">
-          <h3 class="text-center text-2xl drop-shadow-xl">お問い合わせ</h3>
-        </a>
+    <section class="fade-up">
+      <h1 class="text-center text-[2.5rem] uppercase pt-10">contact</h1>
+      <div class="flex my-[5rem] justify-end mx-auto w-full">
+        <div
+          class="relative w-full h-[400px] bg-center bg-cover flex flex-col justify-center items-center"
+          style="background-image: url('./images/contact.png')"
+        >
+          <a
+            href="https://forms.gle/t5WKSnynVp63Jkos5"
+            class="btn btn-outline mt-4 px-8 base-100"
+          >
+            <h3 class="text-center text-2xl drop-shadow-xl">お問い合わせ</h3>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer></footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const slides = document.querySelectorAll(".slide");
-      let currentSlide = 0;
-    
-      function setResponsiveBackground(slide) {
-        const screenWidth = window.innerWidth;
-        if (screenWidth < 768) {
-          slide.style.backgroundImage = slide.getAttribute('data-bg-sm');
-        } else if (screenWidth < 1024) {
-          slide.style.backgroundImage = slide.getAttribute('data-bg-md');
-        } else {
-          slide.style.backgroundImage = slide.getAttribute('data-bg-lg');
-        }
-      }
-    
-      function showSlide(index) {
-        slides.forEach((slide, i) => {
-          if (i === index) {
-            slide.classList.remove("hidden");
-            slide.classList.add("active");
-            setResponsiveBackground(slide);
-          } else {
-            slide.classList.add("hidden");
-            slide.classList.remove("active");
-          }
-        });
-      }
-    
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }
-    
-      showSlide(currentSlide);
-      setInterval(nextSlide, 3000); // 3秒ごとにスライドを切り替える
-    });
-    </script>
-    
-    
-    
-    
-</body>
-
+    <footer></footer>
+  </body>
 </html>
