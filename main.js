@@ -1,50 +1,6 @@
 // Create a style element for the zoomIn animation, slide styles, and fade-up animation
 const style = document.createElement('style');
 style.type = 'text/css';
-style.innerHTML = `
-@keyframes zoomIn {
-  from {
-    background-size: 100%;
-  }
-  to {
-    background-size: 110%;
-  }
-}
-
-.f-Rom {
-  font-family: "Rampart One", sans-serif;
-}
-
-.f-Noto-S {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
-.f-Zen {
-  font-family: "Zen Antique", serif;
-}
-
-.slide {
-  background-size: 100%;
-  background-position: center;
-  min-width: 100%; /* コンテナの高さを100%に設定 */
-}
-
-.slide.active {
-  animation: zoomIn 6s ease-in-out forwards;
-}
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-`;
-
 // Append the style to the head
 document.head.appendChild(style);
 
